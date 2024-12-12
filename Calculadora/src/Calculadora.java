@@ -28,7 +28,16 @@ public class Calculadora {
         return valor1 % valor2;
     }
 
-
+    public static Integer factorial(Integer valor) {
+        if (valor < 0) {
+            throw new ArithmeticException("No se puede calcular el factorial de un número negativo.");
+        }
+        int resultado = 1;
+        for (int i = 1; i <= valor; i++) {
+            resultado *= i;
+        }
+        return resultado;
+    }
 
     public static void main(String[] args) {
 
@@ -38,10 +47,13 @@ public class Calculadora {
 
         Integer resultadoModulo = modulo(2,10);
 
+        Integer resultadoFactorial = factorial(10);
+
 
         System.out.println(resultado);
         System.out.println(resultadoPorcentaje);
         System.out.println(resultadoModulo);
+        System.out.println(resultadoFactorial);
 
     }
 }
