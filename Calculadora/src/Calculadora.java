@@ -39,6 +39,13 @@ public class Calculadora {
         return resultado;
     }
 
+    public static Double raizCuadrada(Integer valor) {
+        if (valor < 0) {
+            throw new ArithmeticException("No se puede calcular la raíz cuadrada de un número negativo.");
+        }
+        return Math.sqrt(valor);
+    }
+
     public static void main(String[] args) {
 
         Double resultado = logica("suma", 2, 7);
@@ -49,11 +56,13 @@ public class Calculadora {
 
         Integer resultadoFactorial = factorial(10);
 
+        Double resultadoRaizCuadrada = raizCuadrada(49);
 
         System.out.println(resultado);
         System.out.println(resultadoPorcentaje);
         System.out.println(resultadoModulo);
         System.out.println(resultadoFactorial);
+        System.out.println(resultadoRaizCuadrada);
 
     }
 }
